@@ -1,0 +1,67 @@
+body
+{
+    background-color: #1C1C1C;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+@font-face {
+  	font-family: 'CaviarDreams';
+  	src: url('../CaviarDreams.ttf');
+}
+
+h1
+{
+	font-family: CaviarDreams;
+	font-size: 25px;
+	color: white;
+}
+
+a
+{
+	 text-decoration:none;
+     border: none;
+     color:white;
+     font-family: CaviarDreams;
+     font-size: 20px;
+}
+
+p
+{
+    font-size: 15px;
+    font-family: CaviarDreams;
+    color: white;
+}
+
+.div
+{
+	display: inline-block;
+	width: auto;
+	padding: 3px;
+}
+
+.div{
+	/* on définit la taille du div et on empêche les débordements */
+	width:100px;
+	height:100px;
+	overflow:hidden;
+}
+
+.div img{
+	-webkit-transition: all 0.5s ease; /* Safari and Chrome */
+	-moz-transition: all 0.5s ease; /* Firefox */
+	-o-transition: all 0.5s ease; /* IE 9 */
+	-ms-transition: all 0.5s ease; /* Opera */
+	transition: all 0.5s ease;
+	max-width: 100%;
+}
+			
+.div img:hover{
+	-webkit-transform:scale(1.5); /* Safari and Chrome */
+	-moz-transform:scale(1.5); /* Firefox */
+	-ms-transform:scale(1.5); /* IE 9 */
+	-o-transform:scale(1.5); /* Opera */
+	transform:scale(1.5);
+}
+
