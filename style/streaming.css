@@ -42,7 +42,7 @@ p
 }
 
 .div{
-	/* on définit la taille du div et on empêche les débordements */
+	
 	width:165px;
 	height:165px;
 	overflow:hidden;
@@ -65,3 +65,24 @@ p
 	transform:scale(1.5);
 }
 
+@media only screen and (max-width: 600px) {
+
+.div{
+	width:100px;
+	height:100px;
+	overflow:hidden;
+	padding: 1px;
+}
+
+}
+
+@media only screen and (max-width: 320px) {
+
+.div{
+	width:80px;
+	height:80px;
+	overflow:hidden;
+	padding: 1px;
+}
+
+}
