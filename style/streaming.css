@@ -38,13 +38,13 @@ p
 {
 	display: inline-block;
 	width: auto;
-	padding: 3px;
+	padding: 4px;
 }
 
 .div{
 	/* on définit la taille du div et on empêche les débordements */
-	width:100px;
-	height:100px;
+	width:165px;
+	height:165px;
 	overflow:hidden;
 }
 
