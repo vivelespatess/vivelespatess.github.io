@@ -2,7 +2,7 @@
 <head>
 			<title>🍝VIVI🍝</title>
 			<meta charset="utf-8">
-			<link rel="stylesheet" href="../style/index.css">
+			<link rel="stylesheet" href="../style/musique.css">
 			<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
 			<link rel="icon" href="../image/pate.ico" />
 			<link rel="apple-touch-icon" href="../image/pate.ico" />
@@ -13,16 +13,28 @@
 	<center>
 
 		<h1>🍝VIVE LES PÂTES🍝</h1>
-<p>Voilà la musique que j'ai faite (seul le lien permet de les écouter)</p>
-		<p>&nbsp;</p>
-		<audio controls>
-			<source src="../musique/trap.mp3" type="audio/mp3" />
-		</audio>
-		<audio controls>
-			<source src="../musique/kika.mp3" type="audio/mp3" />
-		</audio>	
-		<p>&nbsp;</p>
+
+<div style="width:305px;height:auto;border:1px solid #999999;">
+    	                   <p>Toutes mes musiques disponnible sur Spotify</p>
+    	                       <hr width="50%"/>
+            
+            <audio src="" controls id="audioPlayer"></audio>
+                     <ul id="playlist">
+                    
+                    <li class="current-song"><a href="../musique/mienne/1.mp3">01-Power Of Chill</a></li>
+                    <li><a href="../musique/mienne/2.mp3">02-Sombre Début</a></li>
+                    <li><a href="../musique/mienne/3.mp3">03-MiniGrid</a></li>
+                    <li><a href="../musique/mienne/4.mp3">04-Il faut trouver un titre</a></li>
+                    <li><a href="../musique/mienne/5.mp3">05-Elle aussi elle, a pas de titre</a></li>
+
+                    </ul> </div></div></div>
+   				</div>
 		
 	</center>
-
+    <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+    <script src="../audioPlayer.js"></script>
+    <script>
+        // loads the audio player
+        audioPlayer();
+     </script>
 </body></html>
