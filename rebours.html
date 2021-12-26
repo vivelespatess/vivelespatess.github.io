@@ -1,0 +1,69 @@
+<html>
+<head>
+	
+	<script language="JavaScript">  
+function decompte(cpt,H,s,clr1,clr2){
+    cpt = document.getElementById(cpt);
+    var Now = new Date();
+    if (H>=Now)
+      {
+      dif = Math.abs(H-Now);
+      var day = Math.floor(dif / 86400000);
+      dif = Math.floor(dif-(day*86400000)); 
+      var hour = Math.floor(dif / 3600000);
+      dif = Math.floor(dif-(hour*3600000));
+      var min = Math.floor(dif / 60000);
+      dif = Math.floor(dif-(min*60000));
+      var sec = Math.floor(dif/1000);
+      var prefDay='';
+      if (day<0) {prefDay = '00000'}
+      else
+        {if (day<10000)
+          {if (day<1000)
+           {if (day<100)
+            {if (day<10)
+             {prefDay = '0000';}
+            else {prefDay = '000';}
+            }
+           else {prefDay = '00';}
+           }
+           else {prefDay = '0';}
+          }
+         }
+      if (hour<10) {hour = '0' + hour;}
+      if (min<10)  {min  = '0' + min;}
+      if (sec<10)  {sec  = '0' + sec;}
+      if (s==0)
+        {cpt.innerHTML= '<font style="color:'+clr1+';">' + day + '</font> <font style="color:'+clr2+';">Jours</font> <font style="color:'+clr1+';">' + hour + '</font> <font style="color:'+clr2+';">Heures</font> <font style="color:'+clr1+';">' + min + '</font> <font style="color:'+clr2+';">Minutes</font> <font style="color:'+clr1+';">' + sec + '</font> <font style="color:'+clr2+';">Secondes</font>';}
+      else
+        {
+        if (s==1)
+          {cpt.innerHTML= '<font style="color:'+clr1+';">' + day + '</font><font style="color:'+clr2+';">j</font> <font style="color:'+clr1+';">' + hour + '</font><font style="color:'+clr2+';">h</font> <font style="color:'+clr1+';">' + min + '</font><font style="color:'+clr2+';">m</font> <font style="color:'+clr1+';">' + sec + '</font><font style="color:'+clr2+';">s</font>';}
+        else
+          {cpt.innerHTML= '<font style="color:white;">' + prefDay + '</font>' + day + ' ' + hour + ' ' + min + ' ' + sec ;}
+        }
+      }
+    else    
+      {
+      if (s!=2)
+        {cpt.innerHTML='<font style="font-size:17px;color:'+clr2+';">Compte à rebours terminé</font>';}
+      else
+        {cpt.innerHTML='&nbsp;<font style="font-size:22px;">Compte à rebours terminé</font>';}
+      }
+    repeat=setTimeout("decompte('" + cpt.id + "'," + H + ", " + s + ", '" + clr1 + "', '" + clr2 + "')",1000)
+    }       
+</script>
+
+</head>
+<body bgcolor="#1C1C1C" marginwidth="0" marginheight="0">&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<div style="text-align:center;&quot;"><div style="margin:0px;margin-left:5px;">
+
+	<div id="divCptDecompteNet1" style="font-size:50px;font-family: verdana;color:black;"></div>
+
+	<script>decompte('divCptDecompteNet1',1640991600000,1,'#1BE000','#1BE000')</script></div>
+
+	<div style="color:#1BE000;font-family: verdana;font-size:0px;text-align:center;"><a style="color:#1BE000;font-family: verdana;font-size:0px;text-decoration:none;" target="_blank" href="https://www.decompte.net/compte-a-rebours/">Compte à rebours</a> avant le 01/01/2022</div></div>      
+
+
+
+</body>
+</html>
