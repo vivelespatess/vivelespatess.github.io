@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🍝VIVE LES PATES🍝</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style/rates.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <link rel="icon" href="image/pate.ico" />
+    <link rel="apple-touch-icon" href="image/pate.ico" />
+    <meta name="description" content="Rates"/>
+</head>
+<body>
+    <div class="center-content">
+        <center>
+            <h1>🍝VIVE LES PÂTES🍝</h1>
+            <hr width="50%">&nbsp;
+            <div class="row">
+                <div class="divimg">
+                    <img src="image/rates/Google.png">
+                </div>
+                <div class="description">
+                    <p id="google-rate">ARS</p>
+                </div>
+                <div class="percentage">
+                    <p id="google-variation">%</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="divimg">
+                    <img src="image/rates/wu.png">
+                </div>
+                <div class="description">
+                    <p id="wu-rate">ARS</p>
+                </div>
+                <div class="percentage">
+                    <p id="wu-variation">%</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="divimg">
+                    <img src="image/rates/remitly.png">
+                </div>
+                <div class="description">
+                    <p id="remitly-rate">ARS</p>
+                </div>
+                <div class="percentage">
+                    <p id="remitly-variation">%</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="divimg">
+                    <img src="image/rates/ria.png">
+                </div>
+                <div class="description">
+                    <p id="ria-rate">ARS</p>
+                </div>
+                <div class="percentage">
+                    <p id="ria-variation">%</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="divimg">
+                    <img src="image/rates/xoom.png">
+                </div>
+                <div class="description">
+                    <p id="xoom-rate">ARS</p>
+                </div>
+                <div class="percentage">
+                    <p id="xoom-variation">%</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="description">
+                    <p id="last-test">TIME</p>
+                </div>
+            </div>
+        </center>
+    </div>
+<script>
+    async function fetchRates() {
+        try {
+            console.log('Fetching rates...');
+            const response = await fetch('http://127.0.0.1:5000/api/rates');
+            const data = await response.json();
+            console.log('Received data:', data);
+
+            document.getElementById('google-rate').innerText = data.google_rate + ' ARS';
+            document.getElementById('wu-rate').innerText = data.wu_rate + ' ARS';
+            document.getElementById('remitly-rate').innerText = data.remitly_rate + ' ARS';
+            document.getElementById('ria-rate').innerText = data.ria_rate ? data.ria_rate + ' ARS' : 'N/A';
+            document.getElementById('xoom-rate').innerText = data.xoom_rate + ' ARS';
+            
+            document.getElementById('google-variation').innerText = '-'; // Pas de variation pour Google
+            document.getElementById('wu-variation').innerText = data.wu_variation ? data.wu_variation.toFixed(2) + ' %' : 'N/A';
+            document.getElementById('remitly-variation').innerText = data.remitly_variation ? data.remitly_variation.toFixed(2) + ' %' : 'N/A';
+            document.getElementById('ria-variation').innerText = data.ria_variation ? data.ria_variation.toFixed(2) + ' %' : 'N/A';
+            document.getElementById('xoom-variation').innerText = data.xoom_variation ? data.xoom_variation.toFixed(2) + ' %' : 'N/A';
+            
+            document.getElementById('last-test').innerText = data.last_test ? data.last_test : 'N/A';
+        } catch (error) {
+            console.error('Error fetching rates:', error);
+        }
+    }
+
+    setInterval(fetchRates, 6000); // Rafraîchit toutes les 1 minutes
+    fetchRates(); // Premier appel
+</script>
+</body>
+</html>
