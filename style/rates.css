@@ -1,0 +1,109 @@
+body
+{
+    background-color: #1C1C1C;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    padding: 0 20px; /* Ajoute un padding horizontal de 20px, sans affecter verticalement */
+}
+
+.center-content {
+    width: 100%; /* s'assure que le contenu utilise toute la largeur disponible */
+    max-width: 445px; /* limite la largeur maximale du contenu central */
+    margin: auto; /* centre le bloc dans la page */
+}
+
+@font-face {
+  font-family: 'CaviarDreams';
+  src: url('../CaviarDreams.ttf');
+}
+
+h1
+{
+	font-family: CaviarDreams ;
+	font-size: 25px;
+	color: white;
+}
+
+h2
+{
+	font-size: 20px;
+	font-family: CaviarDreams ;
+	color: white;
+}
+
+p
+{
+	font-family: CaviarDreams ;
+	color: white;
+}
+
+a
+{
+	font-family: CaviarDreams ;
+	color: #40FF00;
+    border: none
+}
+
+img {
+
+	width: 80px;
+
+}
+
+.row {
+    display: flex;
+    align-items: stretch; /* Cela étirera tous les enfants pour correspondre à la hauteur du plus grand enfant */
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.divimg, .description, .percentage {
+    padding: 10px;
+    border: 1px solid #999999;
+    display: flex;
+    align-items: center; /* Centrer le contenu verticalement */
+    justify-content: center; /* Centrer le contenu horizontalement */
+}
+
+.divimg {
+    flex: 0 0 auto; /* Ne pas étirer le logo */
+    width: auto; /* largeur fixe pour les logos */
+}
+
+.description {
+    flex: 1; /* Prendre l'espace restant */
+    margin-left: -1px; /* Espacement entre le logo et la description */
+}
+
+.percentage {
+    flex: 0.2; /* Prendre l'espace restant */
+    margin-left: -1px; /* Espacement entre le logo et la description */
+}
+
+
+span
+{
+	color: #40FF00
+}
+
+@media only screen and (max-width: 600px) {
+
+img {
+
+	width: 50px;
+
+}
+
+}
+
+@media only screen and (max-width: 320px) {
+
+
+img {
+
+	width: 50px;
+
+}
+
+}
