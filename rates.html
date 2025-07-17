@@ -16,7 +16,7 @@
             <hr width="50%">&nbsp;
             <div class="row">
                 <div class="divimg">
-                    <img src="image/rates/Google.png">
+                    <img src="image/rates/bourso.png">
                 </div>
                 <div class="description">
                     <p id="google-rate">ARS</p>
@@ -49,7 +49,7 @@
             </div>
             <div class="row">
                 <div class="divimg">
-                    <img src="image/rates/ria.png">
+                    <img src="image/rates/moneygram.png">
                 </div>
                 <div class="description">
                     <p id="ria-rate">ARS</p>
@@ -84,16 +84,16 @@
             const data = await response.json();
             console.log('Received data:', data);
 
-            document.getElementById('google-rate').innerText = data.google_rate + ' ARS';
+            document.getElementById('xe-rate').innerText = data.google_rate + ' ARS';
             document.getElementById('wu-rate').innerText = data.wu_rate + ' ARS';
             document.getElementById('remitly-rate').innerText = data.remitly_rate + ' ARS';
-            document.getElementById('ria-rate').innerText = data.ria_rate ? data.ria_rate + ' ARS' : 'N/A';
+            document.getElementById('moneygram-rate').innerText = data.ria_rate ? data.ria_rate + ' ARS' : 'N/A';
             document.getElementById('xoom-rate').innerText = data.xoom_rate + ' ARS';
             
-            document.getElementById('google-variation').innerText = '-'; // Pas de variation pour Google
+            document.getElementById('xe-variation').innerText = '-'; // Pas de variation pour Google
             document.getElementById('wu-variation').innerText = data.wu_variation ? data.wu_variation.toFixed(2) + ' %' : 'N/A';
             document.getElementById('remitly-variation').innerText = data.remitly_variation ? data.remitly_variation.toFixed(2) + ' %' : 'N/A';
-            document.getElementById('ria-variation').innerText = data.ria_variation ? data.ria_variation.toFixed(2) + ' %' : 'N/A';
+            document.getElementById('moneygram-variation').innerText = data.ria_variation ? data.ria_variation.toFixed(2) + ' %' : 'N/A';
             document.getElementById('xoom-variation').innerText = data.xoom_variation ? data.xoom_variation.toFixed(2) + ' %' : 'N/A';
             
             document.getElementById('last-test').innerText = data.last_test ? data.last_test : 'N/A';
